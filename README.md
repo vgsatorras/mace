@@ -154,7 +154,7 @@ git clone https://github.com/davkovacs/BOTNet-datasets.git
 ls BOTNet-datasets/dataset_3BPA
 ```
 
-!python3 ./mace/scripts/run_train.py \
+python ./mace/scripts/run_train.py \
   --name="MACE_model" \
   --train_file="BOTNet-datasets/dataset_3BPA/train_300K.xyz" \
   --valid_fraction=0.05 \
