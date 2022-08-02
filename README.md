@@ -149,8 +149,10 @@ MACE is published and distributed under the [Academic Software License v1.0 ](AS
 
 ## Initialize dataset and run expermient
 
+```
 git clone https://github.com/davkovacs/BOTNet-datasets.git
 ls BOTNet-datasets/dataset_3BPA
+```
 
 !python3 ./mace/scripts/run_train.py \
   --name="MACE_model" \
