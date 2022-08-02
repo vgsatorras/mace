@@ -154,6 +154,7 @@ git clone https://github.com/davkovacs/BOTNet-datasets.git
 ls BOTNet-datasets/dataset_3BPA
 ```
 
+```sh
 python ./mace/scripts/run_train.py \
   --name="MACE_model" \
   --train_file="BOTNet-datasets/dataset_3BPA/train_300K.xyz" \
@@ -171,3 +172,4 @@ python ./mace/scripts/run_train.py \
   --default_dtype="float32" \
   --device=cuda \
   --seed=123
+```
