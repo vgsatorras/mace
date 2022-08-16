@@ -161,15 +161,18 @@ python ./mace/scripts/run_train.py \
   --valid_fraction=0.05 \
   --test_file="BOTNet-datasets/dataset_3BPA/test_300K.xyz" \
   --E0s='{1:-13.663181292231226, 6:-1029.2809654211628, 7:-1484.1187695035828, 8:-2042.0330099956639}' \
-  --model="ScaleShiftMACE" \
-  --hidden_irreps='16x0e' \
-  --r_max=4.0 \
-  --batch_size=20 \
-  --max_num_epochs=100 \
+  --model="MACE" \
+  --hidden_irreps='128x0e + 128x1o' \
+  --r_max=5.0 \
+  --batch_size=10 \
+  --max_num_epochs=1500 \
+  --swa \
+  --start_swa=1200 \
   --ema \
   --ema_decay=0.99 \
   --amsgrad \
   --default_dtype="float32" \
   --device=cuda \
   --seed=123
+  | tee mace_original.log &
 ```

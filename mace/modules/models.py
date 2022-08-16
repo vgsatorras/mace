@@ -63,6 +63,8 @@ class MACE(torch.nn.Module):
         )
 
         # Interactions and readout
+        print("atomic energies")
+        print(atomic_energies)
         self.atomic_energies_fn = AtomicEnergiesBlock(atomic_energies)
 
         inter = interaction_cls_first(
@@ -195,6 +197,9 @@ class ScaleShiftMACE(MACE):
     def forward(self, data: AtomicData, training=False) -> Dict[str, Any]:
         # Setup
         data.positions.requires_grad = True
+
+        print("node_attrs shape")
+        print(data.node_attrs)
 
         # Atomic energies
         node_e0 = self.atomic_energies_fn(data.node_attrs)
@@ -388,7 +393,7 @@ class ScaleShiftBOTNet(BOTNet):
     def forward(self, data: AtomicData, training=False) -> Dict[str, Any]:
         # Setup
         data.positions.requires_grad = True
-
+        
         # Atomic energies
         node_e0 = self.atomic_energies_fn(data.node_attrs)
         e0 = scatter_sum(

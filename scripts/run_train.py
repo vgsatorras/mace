@@ -64,6 +64,8 @@ def main() -> None:
         for config in configs
         for z in config.atomic_numbers
     )
+    print("z_table")
+    print(z_table)
     # yapf: enable
     logging.info(z_table)
     if atomic_energies_dict is None or len(atomic_energies_dict) == 0:
